@@ -3,4 +3,4 @@
 I drew the first few energy eigenfunctions of a free electron 
 on a circle.
 
-![circle wavefunction](circle-wavefunction.git)
+![circle wavefunction](circle-wavefunction.gif)
