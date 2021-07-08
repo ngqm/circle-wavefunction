@@ -11,11 +11,11 @@ free particle on a circle of radius 1
 # ---------------------------------------------------------------------------
 
 # constants
-m_e 	= 9.11e-28							# electron mass
-hbar	= 1.05e-27							# reduced Planck's constant
+m_e 	= 9.11e-28 # electron mass
+hbar	= 1.05e-27 # reduced Planck's constant
 
 # points on circle
-X 		= np.linspace(0, 2 * np.pi, 200) 	# position
+X 		= np.linspace(0, 2 * np.pi, 200) # position
 x, y 	= np.sin(X), np.cos(X)
 
 # ---------------------------------------------------------------------------
@@ -45,17 +45,15 @@ for n in range(4):
 	lines_im[n], = ax_im[n].plot(x, y, np.sin(n * X))
 
 N = 10
-print(N)
 # function to pass into FuncAnimation
 def update(num, lines_re, lines_im):
-	print(num)
-	prog = num/N	# progress
+	prog = num/N # progress
 	for n in range(4):
-		k 		= n 								# quantum number
+		k 		= n # quantum number
 		w 		= hbar * k ** 2/(2 * m_e)			
-		t 		= prog * 2 * np.pi / (w + 0.001)	# time
-		wf_re 	= np.cos(k * X - w * t)				# real part of wavefunction
-		wf_im 	= np.sin(k * X - w * t)				# imaginary part of wavefunction
+		t 		= prog * 2 * np.pi / (w + 0.001) # time
+		wf_re 	= np.cos(k * X - w * t)	# real part of wavefunction
+		wf_im 	= np.sin(k * X - w * t) # imaginary part of wavefunction
 		lines_re[n].set_data([x,y])
 		lines_re[n].set_3d_properties(wf_re)
 		lines_im[n].set_data([x,y])
